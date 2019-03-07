@@ -1,0 +1,11 @@
+[Unit]
+Description=DropboxServer
+
+[Service]
+Type=simple
+ExecStart=/root/go/src/dropbox/main
+WorkingDirectory=/root/go/src/dropbox
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
