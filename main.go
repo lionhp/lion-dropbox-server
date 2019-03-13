@@ -39,19 +39,19 @@ func main() {
 			return
 		}
 
-		switch r.Method {
+		/*switch r.Method {
 		case "PUT", "DELETE", "PROPPATCH", "MKCOL", "COPY", "MOVE":
 			http.Error(w, "Your request method have no Permission", 403)
 			return
-		}
+		}*/
 		if r.Method == "GET" && handleDirList(fs.FileSystem, w, r) {
 			return
 		}
 		fs.ServeHTTP(w, r)
 	})
 
-	http.ListenAndServe(":"+port, nil)
-	//http.ListenAndServeTLS(":"+port, "")
+	//http.ListenAndServe(":"+port, nil)
+	http.ListenAndServeTLS(":"+port, "./server.crt", "./server.key", nil)
 }
 
 func handleDirList(fs webdav.FileSystem, w http.ResponseWriter, r *http.Request) bool {
