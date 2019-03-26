@@ -10,7 +10,7 @@ This is a dropbox server written by golang, based on webdav protocol. If you nee
 ## Usage
 1. Modify configuration file(config.ini)
 2. `go build main.go`
-3. Upload to your server
+3. Deploy to your server
 4. Use linux systemd to manage the server.
 
 ## Changelog
